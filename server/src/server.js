@@ -40,3 +40,7 @@ app.use('/api/projects', projectRoutes)
 app.use('/api/contact', contactRoutes)
 
 export default app
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`)
+})
