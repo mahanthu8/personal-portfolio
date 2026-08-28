@@ -34,21 +34,4 @@ app.get('/api/health', async (_req, res) => {
 app.use('/api/projects', projectRoutes)
 app.use('/api/contact', contactRoutes)
 
-async function startServer() {
-  try {
-    const connection = await db.getConnection()
-    await connection.ping()
-    connection.release()
-
-    app.listen(PORT, () => {
-      console.log(`MySQL connected`)
-      console.log(`API running on http://localhost:${PORT}`)
-    })
-  } catch (error) {
-    console.error('MySQL connection failed:', error.message)
-    console.error('Check server/.env and make sure MySQL is running.')
-    process.exit(1)
-  }
-}
-
-startServer()
+export default app
