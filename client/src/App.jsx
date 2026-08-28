@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser'
 import { useEffect, useState } from 'react'
 import {
   ArrowUpRight,
@@ -36,21 +37,28 @@ function App() {
   }, [])
 
   const submitContact = async (e) => {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const response = await fetch(`${API_URL}/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (!response.ok) throw new Error()
-      setForm({ name: '', email: '', message: '' })
-      setStatus('success')
-    } catch {
-      setStatus('error')
-    }
+  e.preventDefault()
+  setStatus('sending')
+
+  try {
+    await emailjs.send(
+      'service_et325d9',
+      'template_66yi9eq',
+      {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      },
+      'WgooWi7TEexK1oul2'
+    )
+
+    setForm({ name: '', email: '', message: '' })
+    setStatus('success')
+  } catch (error) {
+    console.error('EmailJS Error:', error)
+    setStatus('error')
   }
+}
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -58,7 +66,7 @@ function App() {
     <div className="site">
       <header className="navbar">
         <a href="#home" className="brand" onClick={closeMenu}>
-          <span className="brand-mark">B</span>
+          <span className="brand-mark">M</span>
           <span>{profile.name}</span>
         </a>
 
@@ -121,7 +129,7 @@ developer.build();`}</pre>
           <div className="about-grid">
             <p className="large-copy">{profile.about}</p>
             <div className="stats">
-              <div><strong>12+</strong><span>Core Skills</span></div>
+              <div><strong>7+</strong><span>Core Skills</span></div>
               <div><strong>∞</strong><span>Ideas to Build</span></div>
               <div><strong>100%</strong><span>Learning Mindset</span></div>
             </div>

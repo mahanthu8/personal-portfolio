@@ -2,12 +2,12 @@ export const profile = {
   name: "Mahantesh",
   role: "Computer Science & Data Science Student",
   location: "Bengaluru",
-  email: "mahanthu938@gmail.com.com",
+  email: "mahanthu938@gmail.com",
   tagline: "I build practical digital products with clean code and thoughtful user experiences.",
   about:
     "I enjoy turning ideas into useful applications. My interests include software development, data-driven solutions, web technologies, and emerging technologies. I am continuously improving my problem-solving and development skills through hands-on projects.",
   resumeUrl: "https://drive.google.com/file/d/1op3U-ZPoPxLm_8xVwxPN4VW0mMKA4JjY/view?usp=drivesdk",
-  linkedin: "www.linkedin.com/in/mahantesh-s-240b722a5",
+  linkedin: "https://www.linkedin.com/in/mahantesh-s-240b722a5",
   github: "https://github.com/mahanthu8",
 }
 
