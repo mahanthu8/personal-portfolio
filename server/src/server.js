@@ -14,6 +14,11 @@ export const db = mysql.createPool({
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'portfolio_db',
   port: Number(process.env.DB_PORT || 3306),
+
+  ssl: {
+    rejectUnauthorized: false,
+  },
+
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
