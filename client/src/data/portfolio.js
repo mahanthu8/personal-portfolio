@@ -20,7 +20,7 @@ export const skills = [
   "MySQL",
   "REST APIs",
   "Git & GitHub",
-  "Data Science",
+  "Tableau",
 ]
 
 export const experience = [
@@ -31,7 +31,7 @@ export const experience = [
       "Built full-stack and data-oriented projects while practicing software engineering, API integration, database design and responsive UI development.",
   },
   {
-    period: "2024 — 2026",
+    period: "2024 — present",
     title: "Continuous Learning",
     description:
       "Strengthened programming fundamentals, problem solving, web development and data science through coursework, coding practice and independent learning.",
