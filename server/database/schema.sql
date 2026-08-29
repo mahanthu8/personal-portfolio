@@ -1,5 +1,4 @@
-CREATE DATABASE IF NOT EXISTS portfolio_db;
-USE portfolio_db;
+USE railway;
 
 CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
